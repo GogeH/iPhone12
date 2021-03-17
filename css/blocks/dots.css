@@ -1,0 +1,50 @@
+.dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dots__item {
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+.dots__button {
+    position: relative;
+    vertical-align: top;
+    width: 29px;
+    height: 29px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+}
+
+.dots__button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d8e4e8;
+    transition: 0.2s;
+}
+
+.dots__button:hover::before  {
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.dots__item.active .dots__button::before {
+    background-color: #000000;
+}

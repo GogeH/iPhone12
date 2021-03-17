@@ -1,0 +1,51 @@
+.arrow {
+    position: absolute;
+    z-index: 1000;
+    top: 75px;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 968px) {
+    .arrow {
+        display: none;
+    }
+}
+
+.arrow--left {
+    left: 0;
+}
+
+.arrow--right {
+    right: 0;
+}
+
+.arrow::before {
+    content: "";
+    display: block;
+    height: 68px;
+    width: 68px;
+    background-image: url(../../img/icons/array_prev.svg);
+}
+
+.arrow--right::before {
+    transform: rotate(180deg);
+}
+
+.arrow:not([disabled]):hover::before {
+    opacity: 0.6;
+}
+
+.arrow:not([disabled]):active::before {
+    opacity: 0.2;
+}
+
+.arrow[disabled] {
+    opacity: 0.2;
+    cursor: not-allowed;
+}

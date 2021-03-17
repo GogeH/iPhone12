@@ -1,0 +1,26 @@
+.button {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: bold;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 8px 20px;
+}
+
+.button__buy {
+    background-color: #FE3B3B;
+    border: 1px solid #FE3B3B;
+    color: #FFFFFF;
+}
+
+.button:hover {
+    opacity: 0.6;
+}
+
+.button:active {
+    opacity: 0.2;
+    background-color: #000000;
+    color: #FE3B3B;
+}

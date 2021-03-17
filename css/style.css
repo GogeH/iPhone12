@@ -1,0 +1,27 @@
+@import "base/base.css";
+@import "base/container.css";
+@import "base/fonts.css";
+@import "base/normalize.css";
+
+@import "blocks/amenu.css";
+@import "blocks/arrow.css";
+@import "blocks/back-to-top.css";
+@import "blocks/btn.css";
+@import "blocks/card.css";
+@import "blocks/characteristics.css";
+@import "blocks/cross-sell.css";
+@import "blocks/dots.css";
+@import "blocks/feedback.css";
+@import "blocks/field.css";
+@import "blocks/footer.css";
+@import "blocks/footer-nav.css";
+@import "blocks/form.css";
+@import "blocks/header.css";
+@import "blocks/main-title.css";
+@import "blocks/modal.css";
+@import "blocks/present.css";
+@import "blocks/progress-bar.css";
+@import "blocks/reviews.css";
+@import "blocks/social-networks.css";
+
+

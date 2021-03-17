@@ -1,0 +1,142 @@
+.card {
+    background-color: #f1f4f5;
+    padding-top: 90px;
+}
+
+.card__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.card__image {
+    display: none;
+    max-width: 300px;
+    margin: 0 70px 0 0;
+}
+
+.card__image.active {
+    display: block;
+}
+
+.card__title {
+    display: none;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.card__title.active {
+    display: block;
+}
+
+.card__wrap-btn:not(:last-child) {
+    margin-right: 24px;
+}
+
+.card__buttons {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    white-space: nowrap;
+}
+
+.card__change {
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: 11px 16px;
+}
+
+.card__change.active {
+    color: #FE3B3B;
+    border-bottom: 1px solid #FE3B3B;
+}
+
+.card__description {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.card__description-list {
+    margin-bottom: 18px;
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+}
+
+.card__price {
+    min-width: 110px;
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 60px;
+}
+
+.card__link-characteristics {
+    display: block;
+    color: #4F80FF;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 968px) {
+    .card{
+        padding-top: 50px;
+    }
+
+    .card__wrap {
+        flex-direction: column;
+    }
+
+    .card__image {
+        order: 1;
+        margin-right: 0;
+    }
+
+    .card__info {
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 698px) {
+    .card__info {
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .card__title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .card__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__wrap-btn:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .card__footer {
+        flex-wrap: wrap;
+        align-items: start;
+    }
+
+    .card__price {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+}
+
+.card__wrapper-button:nth-child(1n) {
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
