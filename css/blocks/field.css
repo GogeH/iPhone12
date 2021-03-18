@@ -1,0 +1,22 @@
+.field__entry {
+    width: 100%;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+    color: #ababab;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 12px;
+}
+
+.field__entry--report {
+    resize: none;
+    height: 93px;
+}
+
+.field__entry--subscription {
+    width: 404px;
+    letter-spacing: 0.02em;
+    border: 0;
+    border-radius: 50px 0 0 50px;
+    padding: 15px 0 16px 30px;
+}
