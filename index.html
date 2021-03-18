@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iPhone</title>
+    <title>iPhone12</title>
+    <link rel="preload" href="fonts/SFProDisplay-Regular.woff" as="font">
+    <link href="css/base/normalize.css" rel="stylesheet">
     <link class="favicon" rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="scripts/script.js" defer></script>
+    <script type="module" src="scripts/script.js"></script>
 </head>
 <body>
 <header class="header">
@@ -61,10 +62,13 @@
                 </ul>
                 <div class="card__description">
                     <ul class="card__description-list description">
-                        <li class="card__description-item description__screen js-description-screen">Экран 6.1"/2532x1170 Пикс</li>
+                        <li class="card__description-item description__screen js-description-screen">Экран
+                            6.1"/2532x1170 Пикс
+                        </li>
                         <li class="card__description-item description__tech-screen">Технология экрана OLED</li>
                         <li class="cars__description-item description__processor">Тип процессора A14 Bionic</li>
-                        <li class="card__description-item description__memory js-description-memory">Встроенная память (ROM) 128 ГБ
+                        <li class="card__description-item description__memory js-description-memory">Встроенная память
+                            (ROM) 128 ГБ
                         </li>
                         <li class="card__description-item description__camera">Основная камера МПикс
                             12/12/12/LiDAR
@@ -398,6 +402,7 @@
     </section>
     <section class="reviews" id="reviews">
         <div class="container">
+            <h2 class="visually-hidden">Слайдер</h2>
             <div class="reviews__inside-wrapper js-slider">
                 <button class="arrow arrow--left js-slider-arrow-left"></button>
                 <button class="arrow arrow--right js-slider-arrow-right"></button>
@@ -417,7 +422,8 @@
                     </div>
                     <div class="reviews__item js-slider-item">
                         <div class="reviews__text">
-                            <p>Революционная камера, такая же как в прошлых моделях.Огромная память на 512 гб, хватает на
+                            <p>Революционная камера, такая же как в прошлых моделях.Огромная память на 512 гб, хватает
+                                на
                                 всё с запасом, даже ещё остается на пару фоток. Видео вне конкуренции.
                             </p>
                         </div>
@@ -465,7 +471,7 @@
             </div>
         </div>
     </section>
-        <section class="feedback" id="feedback">
+    <section class="feedback" id="feedback">
         <div class="container">
             <h2 class="feedback__title">Inquire<span class="feedback__title-continue">Your issue</span></h2>
             <div class="feedback__description">
@@ -516,17 +522,17 @@
             <div class="footer__col-right">
                 <div class="social-networks">
                     <ul class="social-networks__list">
-                        <li class="social-networks__item"><a href="#" target="_blank"
-                                                             class="social-networks__link social-networks__link--facebook">Facebook</a>
+                        <li class="social-networks__item"><a href="https://facebook.com/" target="_blank"
+                                             class="social-networks__link social-networks__link--facebook">Facebook</a>
                         </li>
-                        <li class="social-networks__item"><a href="#" target="_blank"
-                                                             class="social-networks__link social-networks__link--twitter">Twitter</a>
+                        <li class="social-networks__item"><a href="https://twitter.com/" target="_blank"
+                                             class="social-networks__link social-networks__link--twitter">Twitter</a>
                         </li>
-                        <li class="social-networks__item"><a href="#" target="_blank"
-                                                             class="social-networks__link social-networks__link--youtube">YouTube</a>
+                        <li class="social-networks__item"><a href="https://youtube.com/" target="_blank"
+                                             class="social-networks__link social-networks__link--youtube">YouTube</a>
                         </li>
-                        <li class="social-networks__item"><a href="#" target="_blank"
-                                                             class="social-networks__link social-networks__link--dribbble">Dribbble</a>
+                        <li class="social-networks__item"><a href="https://dribbble.com/" target="_blank"
+                                             class="social-networks__link social-networks__link--dribbble">Dribbble</a>
                         </li>
                     </ul>
                 </div>
@@ -541,8 +547,8 @@
 <div class="modal js-modal">
     <div class="modal__block js-modal-block">
         <button class="modal__close js-modal-close">✘</button>
-        <h2 class="modal__subtitle js-modal-subtitle"></h2>
-        <form action="">
+        <h2 class="modal__subtitle js-modal-subtitle">Оплата</h2>
+        <form action="http://www.shop_iPhone.com">
             <input class="modal__title-submit visually-hidden js-modal-title-submit" type="text" name="name-good"
                    value="Смартфон Apple iPhone 12 Pro 128GB Graphite" disabled>
             <h3 class="modal__title js-modal-title">Смартфон Apple iPhone 12 Pro 128GB Graphite</h3>

@@ -11,12 +11,6 @@
     cursor: pointer;
 }
 
-@media (max-width: 968px) {
-    .arrow {
-        display: none;
-    }
-}
-
 .arrow--left {
     left: 0;
 }
@@ -48,4 +42,10 @@
 .arrow[disabled] {
     opacity: 0.2;
     cursor: not-allowed;
+}
+
+@media (max-width: 968px) {
+    .arrow {
+        display: none;
+    }
 }

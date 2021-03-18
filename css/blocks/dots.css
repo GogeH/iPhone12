@@ -41,11 +41,10 @@
 }
 
 .dots__button:hover::before  {
-    background-color: #333740;
-    opacity: 0.3;
+    background-color: #ababab;
+    opacity: 0.6;
 }
 
 .dots__item.active .dots__button::before {
-    background-color: #333740;
-    opacity: 0.6;
+    background-color: #000000;
 }

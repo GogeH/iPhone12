@@ -8,13 +8,6 @@
     list-style: none;
 }
 
-@media (max-width: 698px) {
-    .social-networks__list {
-        justify-content: center;
-    }
-
-}
-
 .social-networks__item:not(:first-child) {
     margin-left: 34px;
 }
@@ -64,4 +57,10 @@
 
 .social-networks__link:active {
     opacity: 0.1;
+}
+
+@media (max-width: 698px) {
+    .social-networks__list {
+        justify-content: center;
+    }
 }

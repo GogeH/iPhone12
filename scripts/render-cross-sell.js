@@ -12,9 +12,6 @@ const renderCrossSell = () => {
             throw new Error(response.statusText);
         })
             .then(callback)
-            // .catch((error) => {
-            //     console.log(error);
-            // })
             .catch(console.log);
     };
 
