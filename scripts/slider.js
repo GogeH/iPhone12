@@ -3,7 +3,7 @@ const MODULE_CLASSES = {
   DOTS_BUTTON: 'dots__button',
 };
 
-const moduleSlider = () => {
+const slider = () => {
   const init = () => {
     const sliders = document.querySelectorAll('.js-slider');
 
@@ -21,6 +21,7 @@ const moduleSlider = () => {
       let movePosition = SLIDER_TO_SCROLL * itemWidth;
       let activeSlide = 0;
       let position = 0;
+      let slidersCount = items.length;
 
       const updatePositionValue = (value) => {
         position = value;
@@ -28,6 +29,36 @@ const moduleSlider = () => {
 
       const updateActiveSlide = (index) => {
         activeSlide = index;
+      };
+
+      const shiftRight = () => {
+        if (activeSlide + 1 >= slidersCount) {
+          return;
+        }
+
+        const itemRight = itemsCount - (Math.abs(position) + SLIDER_TO_SHOW * itemWidth) / itemWidth;
+
+        updatePositionValue(position - (itemRight >= SLIDER_TO_SCROLL ? movePosition : itemRight * itemWidth));
+
+        updateActiveSlide(activeSlide + 1);
+        setPosition();
+        disableButtons();
+        changeActiveDot();
+      };
+
+      const shiftLeft = () => {
+        if (activeSlide <= 0) {
+          return;
+        }
+
+        const itemLeft = Math.abs(position) / itemWidth;
+
+        updatePositionValue(position + (itemLeft >= SLIDER_TO_SCROLL ? movePosition : itemLeft * itemWidth));
+
+        updateActiveSlide(activeSlide - 1);
+        setPosition();
+        disableButtons();
+        changeActiveDot();
       };
 
       const changeItemsWidth = () => {
@@ -43,30 +74,9 @@ const moduleSlider = () => {
       };
 
       if (btnPrev && btnNext) {
-        btnNext.addEventListener('click', () => {
-          const itemRight = itemsCount - (Math.abs(position) + SLIDER_TO_SHOW * itemWidth) / itemWidth;
+        btnNext.addEventListener('click', () => shiftRight());
 
-          // updatePositionValue(position - itemRight >= SLIDER_TO_SCROLL ? movePosition : itemRight * itemWidth);
-          position -= itemRight >= SLIDER_TO_SCROLL ? movePosition : itemRight * itemWidth;
-
-          updateActiveSlide(activeSlide + 1);
-
-          setPosition();
-          disableButtons();
-          changeActiveDot();
-        });
-
-        btnPrev.addEventListener('click', () => {
-          const itemLeft = Math.abs(position) / itemWidth;
-
-          // updatePositionValue(position + itemLeft >= SLIDER_TO_SCROLL ? movePosition : itemLeft * itemWidth);
-          position += itemLeft >= SLIDER_TO_SCROLL ? movePosition : itemLeft * itemWidth;
-
-          updateActiveSlide(activeSlide - 1);
-          setPosition();
-          disableButtons();
-          changeActiveDot();
-        });
+        btnPrev.addEventListener('click', () => shiftLeft());
       }
 
       const disableButtons = () => {
@@ -131,6 +141,38 @@ const moduleSlider = () => {
           lastWindowWidth = window.innerWidth;
         }
       });
+
+      const initSwipeHandlers = () => {
+        slider.addEventListener('touchstart', handleTouchStart);
+        slider.addEventListener('touchmove', handleTouchMove);
+
+        let shiftStart = null;
+
+        function handleTouchStart(event) {
+          const firstTouch = event.touches[0];
+
+          shiftStart = firstTouch.clientX;
+        }
+
+        function handleTouchMove(event) {
+          if (!shiftStart) {
+            return false;
+          }
+
+          const shiftEnd = event.touches[0].clientX;
+          const shirt = shiftEnd - shiftStart;
+
+          if (shirt < 0) {
+            shiftRight();
+          } else {
+            shiftLeft();
+          }
+
+          shiftStart = null;
+        }
+      };
+
+      initSwipeHandlers();
     });
   };
 
@@ -145,4 +187,7 @@ const moduleSlider = () => {
   }
 };
 
-export default moduleSlider;
+export default slider;
+
+
+
